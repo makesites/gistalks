@@ -36,6 +36,8 @@ $(function() {
 	   return false;
     }
 });
+// add to presentation body:
+// data-spy="scroll" data-target=".navbar"
 
 	
 	
