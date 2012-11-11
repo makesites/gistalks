@@ -19,13 +19,13 @@
 		home: function(){
 			
 			console.log("home");
-			var view = new APP.Views.Home();
+			this.view = new APP.Views.Home();
 			
 		},
 		user: function( user ){
 			
-			console.log("user", user);
-			var view = new APP.Views.User();
+			var collection = new APP.Collections.List({user : user });
+			var view = new APP.Views.User({ collection : collection });
 			
 		},
 		presentation: function( user, id){

@@ -1,18 +1,9 @@
-<div id="main">
-  <article class="cta">
+
+<article class="cta">
     <h2>Pick a Gist to display:</h2>
     <ul>
-      <li><a href="">fdkfj</a></li>
-      <li><a href="">fdkfj</a></li>
-      <li><a href="">fdkfj</a></li>
-      <li><a href="">fdkfj</a></li>
-      <li><a href="">fdkfj</a></li>
-      <li><a href="">fdkfj</a></li>
-      <li><a href="">fdkfj</a></li>
-      <li><a href="">fdkfj</a></li>
-      <li><a href="">fdkfj</a></li>
-      <li><a href="">fdkfj</a></li>
-      
+    {{#each . }}
+      <li><a href="{{user.login}}/{{id}}">{{description}}</a></li>
+    {{/each}}
     </ul>
-  </article>
-</div>
+</article>

@@ -1,12 +1,27 @@
 (function(_, Backbone) {
   
-	// **Models**: Add as many here as needed...
-	
-	APP.Models.Main = Model.extend({
-		defaults: { }, 
+	APP.Models.Gist = Model.extend({
+		defaults: { 
+			"comments_url": "",
+			"comments": 0,
+			"created_at": "",
+			"files": {},
+			"user": {}
+		}, 
+		url: function(){ return "https://api.github.com/gists/"+ this.id },
 		initialize: function(){
 			// call cache on every state change
 			
+		}
+	});
+	
+	APP.Collections.List = Collection.extend({
+		model: APP.Models.Gist, 
+		url: function(){ return "https://api.github.com/users/"+ this.user +"/gists" },
+		initialize: function( options ){
+			// call cache on every state change
+			this.user = options.user || null;
+			this.fetch();
 		}
 	});
 	
