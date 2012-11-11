@@ -1,6 +1,20 @@
 (function(_, Backbone) {
 	
-	/* Main layout */
+	APP.Views.Home = View.extend({
+		el: "#main", 
+		url: "/assets/html/home.html"
+	});
+	
+	APP.Views.User = View.extend({
+		el: "#main", 
+		url: "/assets/html/user.html"
+	});
+	
+	APP.Views.Presentation = View.extend({
+		el: "#main", 
+		url: "/assets/html/presentation.html"
+	});
+	
 	APP.Views.Main = View.extend({
 		// the template file that's used as a resource for the markup
 		el: "body", 

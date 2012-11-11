@@ -5,19 +5,34 @@
 		data: {}, 
 		initialize: function() {
 			// every function that uses 'this' as the current object should be in here
-			_.bindAll(this, 'index');
+			_.bindAll(this, 'home', 'user', 'presentation');
 			// initialize other monitoring scripts 
 			$('.navbar').scrollspy();
 			// $.localScroll.defaults.axis = 'y';
 			
 		}, 
 		routes: {
-			"": "index",
-			":page": "index"
+			"": "home",
+			":user": "user",
+			":user/:id": "presentation"
 		}, 
-		index: function(){
+		home: function(){
 			
+			console.log("home");
+			var view = new APP.Views.Home();
 			
+		},
+		user: function( user ){
+			
+			console.log("user", user);
+			var view = new APP.Views.User();
+			
+		},
+		presentation: function( user, id){
+			
+			console.log("presentation", user);
+			console.log("presentation", id);
+			var view = new APP.Views.Presentation();
 			
 		}
 		
