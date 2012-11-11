@@ -1,18 +1,43 @@
 (function(_, Backbone) {
 	
+	// template compiler
+	Template.prototype.compile = Handlebars.compile;
+	
 	APP.Views.Home = View.extend({
 		el: "#main", 
-		url: "/assets/html/home.html"
+		events: {
+			"submit #github-search" : "getUsername"
+		}, 
+		options: {
+			url: "/assets/html/home.html"
+		}, 
+		getUsername: function(e){
+			e.preventDefault();
+			var id = $(e.target).find("input[name='query']").val();
+			app.navigate("/"+id, true);
+		}
 	});
 	
 	APP.Views.User = View.extend({
 		el: "#main", 
-		url: "/assets/html/user.html"
+		options: {
+			url: "/assets/html/user.html"
+		}, 
+		events: {
+			"click .cta li a" : "clickPresentation"
+		}, 
+		clickPresentation: function( e ){
+			e.preventDefault();
+			var url = $(e.target).attr("href");
+			app.navigate(url, true);
+		}
 	});
 	
 	APP.Views.Presentation = View.extend({
 		el: "#main", 
-		url: "/assets/html/presentation.html"
+		options: {
+			url: "/assets/html/presentation.html"
+		}
 	});
 	
 	APP.Views.Main = View.extend({
