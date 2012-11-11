@@ -3,7 +3,7 @@
     <h2>Pick a Gist to display:</h2>
     <ul>
     {{#each . }}
-      <li><a href="{{user.login}}/{{id}}">{{description}}</a></li>
+      <li><a href="/{{user.login}}/{{id}}">{{description}}</a></li>
     {{/each}}
     </ul>
 </article>

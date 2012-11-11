@@ -22,6 +22,14 @@
 		el: "#main", 
 		options: {
 			url: "/assets/html/user.html"
+		}, 
+		events: {
+			"click .cta li a" : "clickPresentation"
+		}, 
+		clickPresentation: function( e ){
+			e.preventDefault();
+			var url = $(e.target).attr("href");
+			app.navigate(url, true);
 		}
 	});
 	

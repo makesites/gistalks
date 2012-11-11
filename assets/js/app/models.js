@@ -12,6 +12,10 @@
 		initialize: function(){
 			// call cache on every state change
 			
+		},
+		parse: function( data ){
+			console.log(data);
+			return data;
 		}
 	});
 	
@@ -28,7 +32,6 @@
 			for( var i in data ){
 				if( data[i].description.search("#talk") < 0 ) delete data[i];
 			}
-			console.log(data);
 			
 			return data;
 		}

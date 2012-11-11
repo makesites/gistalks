@@ -30,9 +30,9 @@
 		},
 		presentation: function( user, id){
 			
-			console.log("presentation", user);
-			console.log("presentation", id);
-			var view = new APP.Views.Presentation();
+			var model = new APP.Models.Gist({id : id });
+			model.fetch();
+			var view = new APP.Views.Presentation({ model : model });
 			
 		}
 		
