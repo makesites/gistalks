@@ -37,73 +37,66 @@
 		el: "#main", 
 		options: {
 			url: "/assets/html/presentation.html"
-		}
-	});
-	
-	APP.Views.Main = View.extend({
-		// the template file that's used as a resource for the markup
-		el: "body", 
-		
-		events: {
-			"click a[rel='external']" : "clickExternal",
-			"click .link": "selectLink",
-		},
-		 
-		initialize: function(options){ 
-			
-			// every function that uses 'this' as the current object should be in here
-			_.bindAll(this, 'render', 'clickExternal', 'selectLink'); 
-			
-			// this.views = {};
-			
-			
-			
-			// assign the localScroll functionality to the nav ul
-			// $(this.el).find('header.top nav > ul').localScroll({
-				// hash: true
-			// });
-			
-			// render the page
-			this.render();
-			
-		},
-		// Presentation View rendering
-		render: function(){
-			
-			// remove loading state
-			$("body").removeClass("loading");
-			
-			// return the object for reference
-			return this;
 		}, 
-		
-		clickExternal: function(e){
-			e.preventDefault();
-			var href = this.findLink(e.target);
-			window.open(href, '_blank'); return false; 
-		},
-		
-		selectLink: function (e) {
-			var myLink = this.findLink(e.target);
-			$(this.el).find('nav li').removeClass('active');
-			$(this.el).find('nav a:[href='+myLink+']').closest("li").addClass('active');
-		},
-		
-		findLink: function (obj) {
-			if (obj.tagName != "A") {
-				return $(obj).closest("a").attr("href");
-			} else {
-				return $(obj).attr("href");
+		events: {
+			"click header nav a" : "clickNav"
+		}, 
+		/*initialize: function( options ){
+			
+			// continue...
+			return View.prototype.initialize.call(this, options);
+		}, */
+		render: function(){
+			if( _.isUndefined( this.slides ) || _.isEmpty( this.slides ) ){
+				// find which file has the slides
+				this.slides = this.findSlides( this.data.get("files") );
+				// parse the markdown file
+				var slides = new APP.Templates.Slides( this.slides.content );
+				// save the content in the model
+				if( !_.isEmpty( this.slides ) ) this.data.set({"slides" : slides.split("<hr />")  });
 			}
-		}
-	
+			// continue rendering the page as usual
+			View.prototype.render.call(this, arguments);
+			
+			this.postRender();
+		}, 
+		postRender: function(){
+			// assign the localScroll functionality to the nav ul
+			$('header.top nav > ul').localScroll({
+				hash: false
+			});
+		}, 
+		// Helpers
+		findSlides : function( files ){
+			var selected = "";
+			// rule: either the first .md file or by priority presenation.md
+			for(var i in files){
+				// key is the filename - value is the full url
+				if( ( i.substr(-3) == ".md" || files[i].language == "Markdown" ) && selected != "presenation.md"){ 
+					selected = files[i];
+				}
+			}
+			return selected;
+		}, 
+		clickNav: function( e ){
+			e.preventDefault();
+			//console.log("OKOK");
+		}, 
 	});
 	
-	
-	
-	
-	
-	
-	
+	// Markdown processing
+	APP.Templates.Slides = Template.extend({
+		// create slides using seperator
+		split : function(seperator, attr){
+			// fallback
+			if( _.isUndefined(attr) ) attr = "default";
+			
+			var slides = this.get("default").toString().split(seperator);
+			
+			return slides;
+			
+		}
+	});
+	APP.Templates.Slides.prototype.compile = (new Showdown.converter()).makeHtml;
 	
 })(this._, this.Backbone);

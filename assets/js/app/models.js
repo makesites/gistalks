@@ -14,7 +14,7 @@
 			
 		},
 		parse: function( data ){
-			console.log(data);
+			//console.log(data);
 			return data;
 		}
 	});
@@ -37,25 +37,5 @@
 		}
 	});
 	
-	/*APP.Models.User = Model.extend({
-		defaults: { }, 
-		initialize: function(){
-			// call cache on every state change
-			
-		}
-	});
-	
-	APP.Models.Tag = Model.extend({
-		defaults: { }, 
-		initialize: function(){
-			// call cache on every state change
-			
-		}
-	});*/
-	
-	
-	
-	
-
 
 })(this._, this.Backbone);

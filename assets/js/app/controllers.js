@@ -17,9 +17,8 @@
 			":user/:id": "presentation"
 		}, 
 		home: function(){
-			
-			console.log("home");
-			this.view = new APP.Views.Home();
+			//console.log("home");
+			var view = new APP.Views.Home();
 			
 		},
 		user: function( user ){

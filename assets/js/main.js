@@ -17,11 +17,6 @@ $(function() {
 	// call the localScroll plugin on the document, allowing y scrolling only
 	// $.localScroll.defaults.axis = 'y';
 	$.localScroll.defaults.axis = 'xy';
-	  
-	// assign the localScroll functionality to the nav ul
-	$('header.top nav > ul').localScroll({
-		hash: true
-	});
 	
 	$(document).keydown(function(e){
     // left key

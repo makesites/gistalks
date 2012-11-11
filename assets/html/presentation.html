@@ -2,25 +2,17 @@
   <h1><a href="#home">{{description}}</a></h1>
   <nav class="navbar">
     <ul class="nav">
-      <li><a href="#home" class="link selected">Home</a></li>
-      <li><a href="#slide1" class="link">1</a></li>
-      <li><a href="#slide2" class="link">2</a></li>
+    {{#iter slides}}
+      <li><a href="#slide{{iPlus1}}" class="link">{{iPlus1}}</a></li>
+     {{/iter}}
     </ul>
   </nav>
 </header>
-<div id="main"> 
-  
-  <!-- pages start here -->
-  <div class="page bg1" id="home">
-    <div class="page-content-wrapper"> </div>
+<div id="slides"> 
+  {{#iter slides}}
+  <div class="page" id="slide{{iPlus1}}">
+    <div class="page-content-wrapper">{{field}}</div>
   </div>
-  <div class="page bg2 secondary" id="slide1"><a name="slide1"></a>
-    <div class="page-content-wrapper"> </div>
-  </div>
-  <div class="page bg3 secondary" id="slide2"><a name="slide2"></a>
-    <div class="page-content-wrapper">
-      <p class="tagline">Tagline</p>
-    </div>
-  </div>
+  {{/iter}}
 </div>
 <!-- end main -->
