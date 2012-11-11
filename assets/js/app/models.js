@@ -22,6 +22,15 @@
 			// call cache on every state change
 			this.user = options.user || null;
 			this.fetch();
+		},
+		parse: function( data ){
+			// filter the items that have #talk in the description
+			for( var i in data ){
+				if( data[i].description.search("#talk") < 0 ) delete data[i];
+			}
+			console.log(data);
+			
+			return data;
 		}
 	});
 	
