@@ -111,6 +111,7 @@ label { }
 
 #slides {
 	height:100%;
+	border-bottom:1px solid #ccc;
 }
 
 #slides img {
@@ -171,6 +172,15 @@ p, #main li {
 	font-weight: 200;
 }
 
+#main[data-view="home"] h1 {
+	text-align:center;
+	font-size:4em;
+}
+
+#main[data-view="home"] p {
+	font-size:1em;
+}
+
 /* header styles */
 
 header { 
@@ -196,10 +206,7 @@ header.top {
 }
 
 header.top h1 {
-	float: left;
-	height:50px;
-	padding: 15px;
-	margin:10px;
+	display:inline-block;
 }
 
 header.top nav {
@@ -229,6 +236,18 @@ header.top nav li a:link, header.top nav li a:visited {
 header.top nav li a:hover, header.top nav li.active a { 
 	background-color:rgba(0,0,0,0.3); 
 	color:#fff; 
+}
+
+header a[data-service=home], header a[data-service=link] {
+	display:inline-block;
+	text-decoration:none;
+	font-size:2em;
+	margin:0 10px;
+	color:#666;
+}
+
+header a[data-service=home]:hover, header a[data-service=link]:hover {
+	color:#69c;
 }
 
 /* page styles */
@@ -404,6 +423,14 @@ footer ul.social-links li {
 }
 
 .social a[data-service=mail]:hover {
+	color: #6F0;
+}
+
+.social a[data-service=link]:hover {
+	color: #6F0;
+}
+
+.social a[data-service=home]:hover {
 	color: #6F0;
 }
 
