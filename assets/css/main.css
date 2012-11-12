@@ -83,7 +83,20 @@ h1, h2, h3, h4, h5, h5, header nav ul li {
 
 input {
 	margin:20px 0;
+	padding:10px;
+	border-radius:2px;
+	border: 1px solid #999;
+	
+	font-size:1.5em;
 }
+
+input[type=submit] {
+	color:#369;
+	background-color:#e9e9e9;
+
+}
+
+label { }
 
 .ribbon {
 	z-index:999;
@@ -98,6 +111,20 @@ input {
 
 #slides {
 	height:100%;
+}
+
+#slides img {
+	display:block;
+	opacity: 0;
+	-webkit-transition: all 2s ease-in;
+    -moz-transition: all 2s ease-in;
+    -o-transition: all 2s ease-in;
+    -ms-transition: all 2s ease-in;
+    transition: all 2s ease-in;
+}
+
+#slides img:hover {
+	opacity:1;
 }
 
 #main .cta h1, #main .cta h2 {
