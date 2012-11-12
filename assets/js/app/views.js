@@ -72,6 +72,7 @@
 		postRender: function(){
 			// assign the localScroll functionality to the nav ul
 			$('header.top nav > ul').localScroll({
+				axis:'xy',
 				hash: false
 			});
 			// updating scrollspy
@@ -94,8 +95,8 @@
 		clickNav: function( e ){
 			e.preventDefault();
 			var myLink = this.findLink(e.target);
-			$(this.el).find('nav li').removeClass('active');
-			$(this.el).find('nav a:[href='+myLink+']').closest("li").addClass('active');
+			$(this.el).find("nav li").removeClass('active');
+			$(this.el).find("nav a[href='"+myLink+"']").closest("li").addClass('active');
 		}, 
 	});
 	
