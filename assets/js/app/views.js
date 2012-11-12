@@ -9,7 +9,8 @@
 			"submit #github-search" : "getUsername"
 		}, 
 		options: {
-			url: "/assets/html/home.html"
+			url: "/assets/html/home.html",
+			attr: 'home'
 		}, 
 		getUsername: function(e){
 			e.preventDefault();
@@ -21,7 +22,8 @@
 	APP.Views.User = View.extend({
 		el: "#main", 
 		options: {
-			url: "/assets/html/user.html"
+			url: "/assets/html/user.html",
+			attr: 'user'
 		}, 
 		events: {
 			"click .cta li a" : "clickPresentation"
@@ -36,7 +38,8 @@
 	APP.Views.Presentation = View.extend({
 		el: "#main", 
 		options: {
-			url: "/assets/html/presentation.html"
+			url: "/assets/html/presentation.html",
+			attr: 'presentation'
 		}, 
 		events: {
 			"click header nav a" : "clickNav"
