@@ -55,6 +55,15 @@
 			],
 			"app-controllers": [
 				"/assets/js/app/controllers"
+			],
+			"google-plus": [
+				"https://apis.google.com/js/plusone"
+			],
+			"facebook": [
+				"http://connect.facebook.net/en_US/all.js#xfbml=1"
+			],
+			"twitter": [
+				"http://platform.twitter.com/widgets"
 			]
 		},
 		"shim": {

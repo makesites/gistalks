@@ -19,6 +19,11 @@
 			//console.log("home");
 			var view = new APP.Views.Home();
 			
+			// load social icons (after the app is loaded)
+			require(["facebook", "twitter", "google-plus"], function(){
+				// done ;)
+			});
+	
 		},
 		user: function( user ){
 			

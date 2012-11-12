@@ -260,6 +260,28 @@ header.top nav li a:hover, header.top nav li.active a {
 	color:#fff; 
 }
 
+[data-view=home] header {
+	height: 50px;
+}
+
+/* share options */
+header .social {
+	float: left;
+	width: 200px;
+}
+
+header .share {
+	float: left;
+	width: 360px;
+	padding-top: 12px;
+}
+
+header .share div {
+	float: left;
+	width: 120px;
+}
+
+
 header a[data-service=home], header a[data-service=link] {
 	display:inline-block;
 	text-decoration:none;
