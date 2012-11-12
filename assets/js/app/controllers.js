@@ -5,10 +5,9 @@
 		data: {}, 
 		initialize: function() {
 			// every function that uses 'this' as the current object should be in here
-			_.bindAll(this, 'home', 'user', 'presentation');
+			_.bindAll(this, 'keys', 'home', 'user', 'presentation');
 			// initialize other monitoring scripts 
-			$('.navbar').scrollspy();
-			// $.localScroll.defaults.axis = 'y';
+			this.keys();
 			
 		}, 
 		routes: {
@@ -33,6 +32,20 @@
 			model.fetch();
 			var view = new APP.Views.Presentation({ model : model });
 			
+		}, 
+		keys: function(){
+			$(document).keydown(function(e){
+				// left key
+				if (e.keyCode == 37 || e.keyCode == 38) { 
+				   var next = $('.active').prev().find('a').click();
+				   return false;
+				}
+				
+				if (e.keyCode == 39 || e.keyCode == 40) { 
+				   var next = $('.active').next().find('a').click();
+				   return false;
+				}
+			});
 		}
 		
 	});

@@ -50,6 +50,11 @@
 			return View.prototype.initialize.call(this, options);
 		}, */
 		render: function(){
+			
+			// add to presentation body:
+			//$("body").attr("data-spy", "scroll").attr("data-target", ".navbar");
+
+	
 			if( _.isUndefined( this.slides ) || _.isEmpty( this.slides ) ){
 				// find which file has the slides
 				this.slides = this.findSlides( this.data.get("files") );
@@ -64,6 +69,7 @@
 			this.postRender();
 		}, 
 		postRender: function(){
+			$('header.top nav').scrollspy();
 			// assign the localScroll functionality to the nav ul
 			$('header.top nav > ul').localScroll({
 				hash: false
@@ -83,7 +89,9 @@
 		}, 
 		clickNav: function( e ){
 			e.preventDefault();
-			//console.log("OKOK");
+			var myLink = this.findLink(e.target);
+			$(this.el).find('nav li').removeClass('active');
+			$(this.el).find('nav a:[href='+myLink+']').closest("li").addClass('active');
 		}, 
 	});
 	
