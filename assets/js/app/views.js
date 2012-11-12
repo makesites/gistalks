@@ -69,10 +69,13 @@
 			this.postRender();
 		}, 
 		postRender: function(){
-			$('header.top nav').scrollspy();
 			// assign the localScroll functionality to the nav ul
 			$('header.top nav > ul').localScroll({
 				hash: false
+			});
+			// updating scrollspy
+			$('[data-spy="scroll"]').each(function () {
+			  var $spy = $(this).scrollspy('refresh')
 			});
 		}, 
 		// Helpers
