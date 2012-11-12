@@ -17,18 +17,21 @@
 		}, 
 		home: function(){
 			//console.log("home");
-			var view = new APP.Views.Home();
-			
+			var view = new APP.Views.Home();	
 			// load social icons (after the app is loaded)
-			require(["facebook", "twitter", "google-plus"], function(){
-				// done ;)
-			});
-	
+			this.shareLinks();
+			// show common header
+			this.showHeader();
+			
 		},
 		user: function( user ){
 			
 			var collection = new APP.Collections.List({user : user });
 			var view = new APP.Views.User({ collection : collection });
+			// load social icons (after the app is loaded)
+			this.shareLinks();
+			// show common header
+			this.showHeader();
 			
 		},
 		presentation: function( user, id){
@@ -36,6 +39,8 @@
 			var model = new APP.Models.Gist({id : id });
 			model.fetch();
 			var view = new APP.Views.Presentation({ model : model });
+			// hide common header
+			this.hideHeader();
 			
 		}, 
 		keys: function(){
@@ -51,6 +56,20 @@
 				   return false;
 				}
 			});
+		},
+		shareLinks: function(){
+			require(["facebook", "twitter", "google-plus"], function(){
+				// done ;)
+			});
+		},
+		showHeader: function(){
+			// remove common container
+			$("header.common").show();
+			
+		}, 
+		hideHeader: function(){
+			// remove common container
+			$("header.common").hide();
 		}
 		
 	});

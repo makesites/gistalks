@@ -107,7 +107,7 @@ label { }
 	overflow:hidden;
 }
 
-#main {
+#main[data-view=presentation] {
 	position:relative;
 	width:100%;
 	height:100%;
@@ -201,13 +201,23 @@ header {
 	padding:0 20px;
 }
 
-header .logo {
+header .social a.logo {
 	background-image:url(../img/logo.png);
 	height:32px;
 	width:32px;
-	margin-right:10px;
+	margin-right:16px;
 	background-repeat:no-repeat;
 	background-size:contain;
+	line-height: 130%;
+	opacity: 0.6;
+	-webkit-opacity: 0.6;
+	-moz-opacity: 0.6;
+}
+
+header .social a.logo:hover {
+	opacity: 1;
+	-webkit-opacity: 1;
+	-moz-opacity: 1;
 }
 
 header.top h1 {
@@ -223,6 +233,7 @@ header.top h1 a, header h1 a:link, header.top h1 a:visited {
 header.top {
 	position:fixed;
 	width:100%;
+	height: 75px;
 	top:0;
 	z-index:99;
 }
@@ -260,23 +271,23 @@ header.top nav li a:hover, header.top nav li.active a {
 	color:#fff; 
 }
 
-[data-view=home] header {
+header.common {
 	height: 50px;
 }
 
 /* share options */
-header .social {
+header.common .social {
 	float: left;
 	width: 200px;
 }
 
-header .share {
+header.common .share {
 	float: left;
 	width: 360px;
 	padding-top: 12px;
 }
 
-header .share div {
+header.common .share div {
 	float: left;
 	width: 120px;
 }

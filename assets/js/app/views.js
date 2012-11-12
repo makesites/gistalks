@@ -45,17 +45,8 @@
 		events: {
 			"click header nav a" : "clickNav"
 		}, 
-		/*initialize: function( options ){
-			
-			// continue...
-			return View.prototype.initialize.call(this, options);
-		}, */
 		render: function(){
 			
-			// add to presentation body:
-			//$("body").attr("data-spy", "scroll").attr("data-target", ".navbar");
-
-	
 			if( _.isUndefined( this.slides ) || _.isEmpty( this.slides ) ){
 				// find which file has the slides
 				this.slides = this.findSlides( this.data.get("files") );
