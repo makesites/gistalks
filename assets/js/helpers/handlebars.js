@@ -6,10 +6,13 @@ Handlebars.registerHelper("fontSize", function(count, max){
 	
 });
 
-Handlebars.registerHelper("splitSlides", function( md ){
-	
-	
-	console.log(md );
+Handlebars.registerHelper("notags", function( txt ){
+	// exit now if text is undefined 
+	if(typeof txt == "undefined") return;
+	// the regular expresion
+	var regexp = new RegExp('#([^\\s]*)','g');
+	// replacing the text
+	return txt.replace(regexp, '');
 	
 });
 
