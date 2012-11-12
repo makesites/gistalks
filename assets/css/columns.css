@@ -11,6 +11,13 @@
 	border: 0px dashed #ccc;
 }
 
+.column-center {
+	position:relative; 
+	padding:10px; 
+	border: 0px dashed #ccc;
+	margin:0 auto;
+}
+
 .column-inner {
 	margin: 0px 20px 20px 0;
 	padding:20px;
