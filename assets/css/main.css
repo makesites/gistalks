@@ -252,9 +252,22 @@ header.top nav li a:hover, header.top nav li.active a {
 .page .page-content-wrapper {
 	width:60%;
 	max-width:1000px;
+	height:500px;
 	margin:2% auto;
 	overflow:auto;
+	display:table;
 }
+
+.page .page-content {
+	display:table-cell;
+	margin: 0 auto;
+	vertical-align:middle;
+}
+
+.page .page-content p {
+	text-align:center;
+}
+
 
 .page-content-wrapper h3, .page-content-wrapper p, .page-content-wrapper li {
 	margin:0 0 10px 0;
