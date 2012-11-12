@@ -172,6 +172,15 @@ p, #main li {
 	font-weight: 200;
 }
 
+#main[data-view="home"] h1 {
+	text-align:center;
+	font-size:4em;
+}
+
+#main[data-view="home"] p {
+	font-size:1em;
+}
+
 /* header styles */
 
 header { 
