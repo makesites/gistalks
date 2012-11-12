@@ -201,6 +201,15 @@ header {
 	padding:0 20px;
 }
 
+header .logo {
+	background-image:url(../img/logo.png);
+	height:32px;
+	width:32px;
+	margin-right:10px;
+	background-repeat:no-repeat;
+	background-size:contain;
+}
+
 header.top h1 {
 	margin:20px 0 5px 0;
 	padding:0;
@@ -337,7 +346,11 @@ header ul.social-links li a {
 	
 	margin: 0 auto;
 	vertical-align:middle;
-	text-align:center;
+	/* text-align:center; */
+}
+
+.page .page-content h1 {
+	font-size:2em;
 }
 
 .page .page-content h2 {
