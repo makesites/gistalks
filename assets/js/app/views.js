@@ -14,7 +14,8 @@
 		}, 
 		getUsername: function(e){
 			e.preventDefault();
-			var id = $(e.target).find("input[name='query']").val();
+			// get username - remove @ symbol if necessary
+			var id = $(e.target).find("input[name='query']").val().replace(/@/g, '');
 			app.navigate("/"+id, true);
 		}
 	});
