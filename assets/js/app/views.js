@@ -70,6 +70,8 @@
 			$('[data-spy="scroll"]').each(function () {
 			  var $spy = $(this).scrollspy('refresh')
 			});
+			// add class active to first slide
+			$('.navbar .nav li:first-child').addClass('active');
 		}, 
 		// Helpers
 		findSlides : function( files ){
@@ -85,8 +87,9 @@
 		}, 
 		clickNav: function( e ){
 			e.preventDefault();
-			var myLink = this.findLink(e.target);
 			$(this.el).find("nav li").removeClass('active');
+			var myLink = this.findLink(e.target);
+			
 			$(this.el).find("nav a[href='"+myLink+"']").closest("li").addClass('active');
 		}, 
 	});
