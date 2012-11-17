@@ -32,7 +32,7 @@ em {
 	border-bottom: 1px dashed #666;
 }
 
-em:hover {
+em:hover, em.hover {
 	font-size:3em;
 	cursor:default;
 	line-height:120%;

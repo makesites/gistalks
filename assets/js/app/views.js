@@ -87,9 +87,8 @@
 		}, 
 		clickNav: function( e ){
 			e.preventDefault();
-			$(this.el).find("nav li").removeClass('active');
 			var myLink = this.findLink(e.target);
-			
+			$(this.el).find("nav li").removeClass('active');
 			$(this.el).find("nav a[href='"+myLink+"']").closest("li").addClass('active');
 		}, 
 	});

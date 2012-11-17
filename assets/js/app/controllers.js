@@ -46,14 +46,25 @@
 		keys: function(){
 			$(document).keydown(function(e){
 				// left key
-				if (e.keyCode == 37 || e.keyCode == 38) { 
+				if (e.keyCode == 38) { 
 				   var next = $('.active').prev().find('a').click();
 				   return false;
 				}
 				
-				if (e.keyCode == 39 || e.keyCode == 40) { 
+				if (e.keyCode == 40) { 
 				   var next = $('.active').next().find('a').click();
 				   return false;
+				}
+				if (e.keyCode == 37) { 
+				   // console.log("hey");
+				   
+				   return false;
+				}
+				
+				if (e.keyCode == 39) { 
+				    var curr = $('.active a').attr('href');
+				    $(curr).find('em').addClass('hover');
+				    return false;
 				}
 			});
 		},
