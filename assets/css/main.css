@@ -120,6 +120,11 @@ label { }
 
 #slides img {
 	display:block;
+	opacity: 1;
+}
+
+#slides img.hidden {
+	display:block;
 	opacity: 0;
 	-webkit-transition: all 2s ease-in;
     -moz-transition: all 2s ease-in;
@@ -128,7 +133,7 @@ label { }
     transition: all 2s ease-in;
 }
 
-#slides img:hover {
+#slides img.hidden:hover {
 	opacity:1;
 }
 
