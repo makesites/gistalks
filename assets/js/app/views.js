@@ -63,8 +63,9 @@
 		postRender: function(){
 			// assign the localScroll functionality to the nav ul
 			$('header.top nav > ul').localScroll({
-				axis:'xy',
-				hash: false
+				axis:'y',
+				hash: false,
+				queue:false
 			});
 			// updating scrollspy
 			$('[data-spy="scroll"]').each(function () {
