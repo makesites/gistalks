@@ -80,7 +80,7 @@
 		}, 
 		hideHeader: function(){
 			// remove common container
-			$("header.common").hide();
+			$("header.common").remove();
 		}
 		
 	});
