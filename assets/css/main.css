@@ -354,7 +354,7 @@ header ul.social-links li a {
 	width:100%;
 	height:100%;
 	padding:20px;
-	overflow:hidden;
+	overflow:scroll;
 	border-bottom:1px dashed #ccc;
 }
 
