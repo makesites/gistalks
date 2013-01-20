@@ -69,8 +69,11 @@
 			});
 			// updating scrollspy
 			$('[data-spy="scroll"]').each(function () {
-			  var $spy = $(this).scrollspy('refresh')
+			  var $spy = $(this).scrollspy('refresh');
 			});
+			
+			$(".navbar li").on('activate', this.focusNav );
+			
 			// add class active to first slide
 			$('.navbar .nav li:first-child').addClass('active');
 		}, 
@@ -91,7 +94,12 @@
 			var myLink = this.findLink(e.target);
 			$(this.el).find("nav li").removeClass('active');
 			$(this.el).find("nav a[href='"+myLink+"']").closest("li").addClass('active');
-		}, 
+		},
+		
+		focusNav: function( e ){
+			e.stopPropagation();
+			$( e.target ).find("a").trigger("focus");
+		}
 	});
 	
 	// Markdown processing
