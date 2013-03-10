@@ -1,9 +1,9 @@
 (function(_, Backbone) {
 	
 	// template compiler
-	Template.prototype.compile = Handlebars.compile;
+	APP.Template.prototype.compile = Handlebars.compile;
 	
-	APP.Views.Home = View.extend({
+	APP.Views.Home = APP.View.extend({
 		el: "#main", 
 		events: {
 			"submit #github-search" : "getUsername"
@@ -20,7 +20,7 @@
 		}
 	});
 	
-	APP.Views.User = View.extend({
+	APP.Views.User = APP.View.extend({
 		el: "#main", 
 		options: {
 			url: "/assets/html/user.html",
@@ -36,7 +36,7 @@
 		}
 	});
 	
-	APP.Views.Presentation = View.extend({
+	APP.Views.Presentation = APP.View.extend({
 		el: "#main", 
 		options: {
 			url: "/assets/html/presentation.html",
@@ -56,7 +56,7 @@
 				if( !_.isEmpty( this.slides ) ) this.data.set({"slides" : slides.split("<hr />")  });
 			}
 			// continue rendering the page as usual
-			View.prototype.render.call(this, arguments);
+			APP.View.prototype.render.call(this, arguments);
 			
 			this.postRender();
 		}, 
@@ -103,7 +103,7 @@
 	});
 	
 	// Markdown processing
-	APP.Templates.Slides = Template.extend({
+	APP.Templates.Slides = APP.Template.extend({
 		// create slides using seperator
 		split : function(seperator, attr){
 			// fallback

@@ -4,31 +4,30 @@
 		"callback": function(){ init();}, 
 		"paths": {
 			"jquery": [
-				"http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min",
-				"/assets/js/lib/5jquery.min"
+				"http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min",
+				"http://cdn.kdi.co/js/jquery/1.8.3/jquery.min"
 			],
 			"json2": [
-				"http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.min",
-				"/assets/js/lib/json2.min"
+				"http://cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.min",
+				"http://cdn.kdi.co/js/json2/20121008/json2.min"
 			],
 			"underscore": [
-				"http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min",
-				"/assets/js/lib/underscore-min"
+				"http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min",
+				"http://cdn.kdi.co/js/underscore/1.4.4/underscore-min"
 			],
 			"handlebars": [
-				"http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0.beta6/handlebars.min",
-				"/assets/js/lib/handlebars.min"
+				"http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0-rc.3/handlebars.min",
+				"http://cdn.kdi.co/js/handlebars/1.0.0-rc.3/handlebars.min"
 			],
 			"backbone": [
 				"http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min",
-				"/assets/js/lib/backbone-min"
+				"http://cdn.kdi.co/js/backbone/0.9.2/backbone-min"
 			],
 			"jquery.easing": [
 				"https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min",
 				"/assets/js/lib/jquery.easing.min"
 			],
 			"jquery.scrollTo": [
-				//"https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.3.1/jquery.scrollTo.min",
 				"/assets/js/lib/jquery.scrollTo.min"
 			],
 			"jquery.localscroll": [
@@ -38,11 +37,11 @@
 				"/assets/js/lib/bootstrap-scrollspy"
 			],
 			"showdown": [
-				"http://cdn.kdi.co/js/libs/showdown.min",
-				"/assets/js/lib/showdown.min"
+				"http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min", 
+				"http://cdn.kdi.co/js/showdown/0.3.1/showdown-min"
 			],
 			"backbone.app": [
-				"/assets/js/helpers/backbone.app-min"
+				"http://cdn.kdi.co/js/backbone.app/0.8.5/backbone.app-min"
 			],
 			"helper-handlebars": [
 				"/assets/js/helpers/handlebars"

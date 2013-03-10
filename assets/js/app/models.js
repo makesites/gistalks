@@ -1,6 +1,6 @@
 (function(_, Backbone) {
   
-	APP.Models.Gist = Model.extend({
+	APP.Models.Gist = APP.Model.extend({
 		defaults: { 
 			"comments_url": "",
 			"comments": 0,
@@ -10,8 +10,8 @@
 		}, 
 		url: function(){ return "https://api.github.com/gists/"+ this.id },
 		initialize: function(){
-			// call cache on every state change
-			
+			// 
+			_.bindAll(this);
 		},
 		parse: function( data ){
 			//console.log(data);
@@ -19,11 +19,11 @@
 		}
 	});
 	
-	APP.Collections.List = Collection.extend({
+	APP.Collections.List = APP.Collection.extend({
 		model: APP.Models.Gist, 
 		url: function(){ return "https://api.github.com/users/"+ this.user +"/gists" },
 		initialize: function( options ){
-			// call cache on every state change
+			// 
 			this.user = options.user || null;
 			this.fetch();
 		},

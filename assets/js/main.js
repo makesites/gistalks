@@ -1,7 +1,7 @@
 var app;
 
 // load the config 
-requirejs.config( config );
+require.config( config );
 
 // when logic dependencies are loaded
 function init(){
