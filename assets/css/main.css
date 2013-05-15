@@ -121,6 +121,9 @@ label { }
 #slides img {
 	display:block;
 	opacity: 1;
+        margin: 0 auto;
+        max-width: 80%;
+        max-height: 80%;
 }
 
 #slides img.hidden {
